@@ -1,0 +1,42 @@
+{
+	"name": "adbros/utils",
+	"description": "",
+	"type": "library",
+	"license": "MIT",
+	"require": {
+		"php": ">=7.1",
+		"nette/utils": "^2.4 || ^3.0"
+	},
+	"require-dev": {
+		"ninjify/coding-standard": "^0.10",
+		"php-parallel-lint/php-console-highlighter": "^0.5",
+		"php-parallel-lint/php-parallel-lint": "^1.2",
+		"phpstan/phpstan": "^0.12",
+		"phpstan/phpstan-deprecation-rules": "^0.12",
+		"phpstan/phpstan-strict-rules": "^0.12"
+	},
+	"autoload": {
+		"psr-4": {
+			"Adbros\\Utils\\": "src/"
+		}
+	},
+	"config": {
+		"sort-packages": true
+	},
+	"scripts": {
+		"cs": [
+			"parallel-lint -e php,phpt --blame src",
+			"phpcs --standard=.ruleset.xml --colors -nsp"
+		],
+		"cs-fix": [
+			"phpcbf --standard=.ruleset.xml --colors -nsp"
+		],
+		"phpstan": [
+			"phpstan analyse -c .phpstan.neon"
+		],
+		"qa": [
+			"@cs",
+			"@phpstan"
+		]
+	}
+}
