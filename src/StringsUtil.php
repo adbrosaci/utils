@@ -12,7 +12,7 @@ class StringsUtil
 	 */
 	public static function anonymizeEmail(string $email): string
 	{
-		return Strings::replace($email, '/(?<!^)(?<!^.).(?=[^@]+@)/', '*');
+		return Strings::replace($email, '/(?<=..).(?=[^@]+@)/', '*');
 	}
 
 }
