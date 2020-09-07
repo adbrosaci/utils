@@ -9,6 +9,7 @@
 	},
 	"require-dev": {
 		"ninjify/coding-standard": "^0.10",
+		"ninjify/nunjuck": "^0.3.0",
 		"php-parallel-lint/php-console-highlighter": "^0.5",
 		"php-parallel-lint/php-parallel-lint": "^1.2",
 		"phpstan/phpstan": "^0.12",
@@ -26,18 +27,22 @@
 	},
 	"scripts": {
 		"cs": [
-			"parallel-lint -e php,phpt --blame src",
-			"phpcs --standard=.ruleset.xml --colors -nsp"
+			"parallel-lint -e php,phpt --blame src tests --exclude tests/tmp",
+			"phpcs --standard=.ruleset.xml --extensions=php,phpt --colors -nsp"
 		],
 		"cs-fix": [
-			"phpcbf --standard=.ruleset.xml --colors -nsp"
+			"phpcbf --standard=.ruleset.xml --extensions=php,phpt --colors -nsp"
 		],
 		"phpstan": [
 			"phpstan analyse -c .phpstan.neon"
 		],
+		"test": [
+			"tester -C tests"
+		],
 		"qa": [
 			"@cs",
-			"@phpstan"
+			"@phpstan",
+			"@test"
 		],
 		"phpdoc-generate": [
 			"phpdoc-md generate src > README.md"

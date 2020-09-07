@@ -16,7 +16,7 @@ class ValidatorsUtil
 	}
 
 	/**
-	 * Verifies that the value is strong password (contains 8 characters, 1 lowercase letter, 1 uppercase latter and 1 digit)
+	 * Verifies that the value is strong password (contains 8 characters, 1 lowercase letter, 1 uppercase letter and 1 digit)
 	 */
 	public static function isPasswordStrong(string $value): bool
 	{

@@ -2,6 +2,12 @@ parameters:
 	level: max
 	paths:
 		- src
+		- tests
+	excludes_analyse:
+		- tests/tmp
+	fileExtensions:
+		- php
+		- phpt
 includes:
 	- vendor/phpstan/phpstan-deprecation-rules/rules.neon
 	- vendor/phpstan/phpstan-strict-rules/rules.neon

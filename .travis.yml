@@ -20,7 +20,10 @@ jobs:
       name: "PHPStan"
       script:
         - composer phpstan
-
+    -
+        name: "Test"
+        script:
+            - composer test
 sudo: false
 
 cache:

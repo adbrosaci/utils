@@ -18,5 +18,5 @@
 | Visibility | Function |
 |:-----------|:---------|
 | public static | <strong>isIp(</strong><em>\string</em> <strong>$value</strong>)</strong> : <em>bool</em><br /><em>Verifies that the value is valid IP address</em> |
-| public static | <strong>isPasswordStrong(</strong><em>\string</em> <strong>$value</strong>)</strong> : <em>bool</em><br /><em>Verifies that the value is strong password (contains 8 characters, 1 lowercase letter, 1 uppercase latter and 1 digit)</em> |
+| public static | <strong>isPasswordStrong(</strong><em>\string</em> <strong>$value</strong>)</strong> : <em>bool</em><br /><em>Verifies that the value is strong password (contains 8 characters, 1 lowercase letter, 1 uppercase letter and 1 digit)</em> |
 
